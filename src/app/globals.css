@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --background-dark: #121212;
+    --foreground-dark: #ededed;
+    --container-color-dark: #1d1d1d;
+    --secondary-text-color-dark: #b3b3b3;
+    --button-foreground-primary-color-dark: #1e1e1e;
+    --dropdown-background-color-dark: #1e1e1e;
+    --textbox-background-color-dark: var(--dropdown-background-color-dark);
+
+    --background-light: #ededed;
+    --foreground-light: #222222;
+    --container-color-light: #ffffff;
+    --secondary-text-color-dark: #555555;
+    --main-container-foreground-light: var(--foreground-light);
+    --dropdown-background-color-light: #f0f0f0;
+    --textbox-background-color-light: var(--dropdown-background-color-light);
+    
+    --accent-color-1: #d8b4fe;
+}
+
+.dark-mode {
+    color: var(--foreground-dark);
+    background: var(--background-dark);
+}
+
+.main-container {
+    background: var(--container-color-light);
+    color: var(--main-container-foreground-light);
+}
+
+.dark-mode .main-container {
+    background: var(--container-color-dark);
+    color: var(--main-container-foreground-dark);
+}
+
+.select-field {
+    background: var(--dropdown-background-color-light);
+    border-color: var(--accent-color-1);
+}
+
+.input-field {
+    background: var(--textbox-background-color-light);
+    border-color: var(--accent-color-1);
+}
+
+.dark-mode .select-field {
+    background: var(--dropdown-background-color-dark);
+    border-color: var(--accent-color-1);
+}
+
+.dark-mode .input-field {
+    background: var(--textbox-background-color-dark);
+    border-color: var(--accent-color-1);
+}
+
+.submit-button {
+    background: var(--accent-color-1);
+    color: var(--button-foreground-primary-color-dark);
+}
+
+@font-face {
+    font-family: "Consolas";
+    src: url(https://github.com/tsenart/sight/raw/refs/heads/master/fonts/Consolas.ttf) format("monospace");
+}
+
+body {
+    color: var(--foreground-light);
+    background: var(--background-light);
+    font-family: "Consolas", monospace;
+}
+
+@layer utilities {
+    .text-balance {
+        text-wrap: balance;
+    }
+}
